@@ -1,0 +1,13 @@
+.docker-compose*.yaml
+compose*.yaml
+.env*
+!.env
+.gitignore
+vendor
+Dockerfile*
+*.md
+.git
+tests/
+.phpunit*
+alias*
+
