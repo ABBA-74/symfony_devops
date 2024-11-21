@@ -22,7 +22,7 @@ jobs:
         run: docker push ${{ secrets.DOCKERHUB_TAG }}
 
       - name: install sshpass
-        run: apt-get update && apt-get install sshpass
+        run: sudo apt-get update && sudo apt-get install sshpass
 
       - name: update docker image in VPS
         run: sshpass -p ${{ secrets.VPS_PASS }} ssh ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOSTNAME }} 'mkdir test/'
