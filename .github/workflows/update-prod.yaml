@@ -12,6 +12,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: check composer version
+        run: composer -v
+
+      - name: installation of dependencies
+        run: composer install
+
+      - name: launch tests
+        run: php bin/phpunit
+
       - name: build docker image
         run: docker build -f Dockerfile-prod -t ${{ secrets.DOCKERHUB_TAG }} .
 
