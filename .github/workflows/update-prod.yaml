@@ -29,6 +29,6 @@ jobs:
           sshpass -p ${{ secrets.VPS_PASS }} ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOSTNAME }} << EOF
           echo "Connexion reussie au VPS !!!"
           cd symfo-cicd/
-          docker compose up --env-file .env.prod --pull
+          docker compose --env-file .env.prod --pull up -d
           exit
           EOF
