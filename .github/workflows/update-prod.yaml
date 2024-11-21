@@ -8,9 +8,12 @@ on:
 jobs:
   update:
     name: update vps docker network
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v3
+
+      - name: check php version
+        run: php -v
 
       - name: check composer version
         run: composer -v
