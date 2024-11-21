@@ -16,7 +16,7 @@ jobs:
         run: docker build -f Dockerfile-prod -t ${{ secrets.DOCKERHUB_TAG }} .
 
       - name: connect DockerHub
-        run: docker login -u ${{ secrets.DOCKERHUB_USER }} -p ${{ secrets.DOCKERHUB_PASS }} --password-stdin
+        run: echo ${{ secrets.DOCKERHUB_PASS }} | docker login -u ${{ secrets.DOCKERHUB_USER }} --password-stdin
 
       - name: push docker image
         run: docker push ${{ secrets.DOCKERHUB_TAG }}
