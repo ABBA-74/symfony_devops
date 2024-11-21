@@ -31,6 +31,7 @@ jobs:
           cd symfo-cicd/
           docker compose pull
           docker compose --env-file .env.prod up -d
-          docker image prune
+          docker image prune -f
+          echo "Mise à jour effectué avec succès le : `date`" >> log-update-app.txt
           exit
           EOF
