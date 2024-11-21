@@ -1,0 +1,28 @@
+name: update prod
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  update:
+    name: update vps docker network
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: build docker image
+        run: docker build -f Dockerfile-prod -t ${{ secrets.DOCKERHUB_TAG }} .
+
+      - name: connect DockerHub
+        run: docker login -u ${{ secrets.DOCKERHUB_USER }} -p ${{ secrets.DOCKERHUB_PASS }} --password-stdin
+
+      - name: push docker image
+        use: docker push ${{ secrets.DOCKERHUB_TAG }}
+
+      - name: install sshpass
+        run: apt-get update && apt-get install sshpass
+
+      - name: update docker image in VPS
+        use: sshpass -p ${{ secrets.VPS_PASS }} ssh ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOSTNAME }} 'mkdir test/'
