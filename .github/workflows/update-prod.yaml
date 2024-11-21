@@ -31,5 +31,6 @@ jobs:
           cd symfo-cicd/
           docker compose pull
           docker compose --env-file .env.prod up -d
+          docker image prune
           exit
           EOF
