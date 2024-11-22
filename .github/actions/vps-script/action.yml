@@ -29,4 +29,5 @@ runs:
 
     - name: connexion vps
       run: |
-        ssh ${{ inputs.vps-username }}@${{ inputs.vps-host }} "cd ${{ inputs.vps-path }} && bash -s < ${{ inputs.script }}"
+        ssh ${{ inputs.vps-username }}@${{ inputs.vps-host }} "cd ${{ inputs.vps-path }} && bash -s" < ${{ inputs.script }}
+      shell: bash
