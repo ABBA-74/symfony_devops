@@ -62,7 +62,7 @@ jobs:
         uses: ./.github/actions/vps-script
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          vps-username: ${{ secrets.VPS_USERNAME }}
+          vps-username: ${{ secrets.VPS_USER }}
           vps-host: ${{ secrets.VPS_HOSTNAME }}
           vps-path: ${{ secrets.VPS_PATH }}
           script: ./vps-script.sh
