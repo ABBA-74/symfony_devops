@@ -58,7 +58,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run vps script
-        uses: ./github/actions/vps-script
+        uses: ./.github/actions/vps-script
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           vps-username: ${{ secrets.VPS_USERNAME }}
