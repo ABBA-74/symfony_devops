@@ -9,7 +9,7 @@ jobs:
   test:
     name: test
     runs-on: ubuntu-24.04
-      steps:
+    steps:
       - name: check php version
         run: php -v
 
@@ -45,6 +45,7 @@ jobs:
     name: build docker image > docker hub
     runs-on: ubuntu-24.04
     needs: test
+    steps:
       - name: build docker image
         run: docker build -f Dockerfile-prod -t ${{ secrets.DOCKERHUB_TAG }} .
 
@@ -58,6 +59,7 @@ jobs:
     name: update vps
     runs-on: ubuntu-24.04
     needs: docker-image
+    steps:
       - name: install sshpass
         run: sudo apt-get update && sudo apt-get install sshpass
 
