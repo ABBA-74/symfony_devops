@@ -1,5 +1,8 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ABBA-74_symfony_devops&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ABBA-74_symfony_devops)
-
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=ABBA-74_symfony_devops&metric=bugs)](https://sonarcloud.io/summary/new_code?id=ABBA-74_symfony_devops)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=ABBA-74_symfony_devops&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=ABBA-74_symfony_devops)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=ABBA-74_symfony_devops&metric=coverage)](https://sonarcloud.io/summary/new_code?id=ABBA-74_symfony_devops)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=ABBA-74_symfony_devops&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=ABBA-74_symfony_devops)
 
 
 # CI/CD Automation Project for Symfony 7.1
@@ -60,3 +63,6 @@ To implement this workflow, the following are required:
 - **Resource Optimization**: Automated cleanup of unused Docker images saves server space.
 
 ---
+
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=ABBA-74_symfony_devops)](https://sonarcloud.io/summary/new_code?id=ABBA-74_symfony_devops)
+[![SonarQube Cloud](https://sonarcloud.io/images/project_badges/sonarcloud-light.svg)](https://sonarcloud.io/summary/new_code?id=ABBA-74_symfony_devops)
