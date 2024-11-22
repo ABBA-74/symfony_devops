@@ -57,6 +57,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+
       - name: Run vps script
         uses: ./.github/actions/vps-script
         with:
