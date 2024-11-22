@@ -29,5 +29,7 @@ runs:
 
     - name: connexion vps
       run: |
+        echo "Running script on VPS..."
+        scp ${{ inputs.script }} ${{ inputs.vps-username }}@${{ inputs.vps-host }}:${{ inputs.vps-path }}/script.sh
         ssh ${{ inputs.vps-username }}@${{ inputs.vps-host }} "cd ${{ inputs.vps-path }} && bash -s" < ${{ inputs.script }}
       shell: bash
