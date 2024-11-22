@@ -21,15 +21,14 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - name: connexion vps
+    - name: setup ssh
       uses: kielabokkie/ssh-key-and-known-hosts-action@v1
       with:
         ssh-private-key: ${{ inputs.ssh-private-key }}
         ssh-host: ${{ inputs.vps-host }}
 
-    - name: connexion vps
+    - name: connexion vps and execute script
       run: |
         echo "Running script on VPS..."
-        scp ${{ inputs.script }} ${{ inputs.vps-username }}@${{ inputs.vps-host }}:${{ inputs.vps-path }}/script.sh
         ssh ${{ inputs.vps-username }}@${{ inputs.vps-host }} "cd ${{ inputs.vps-path }} && bash -s" < ${{ inputs.script }}
       shell: bash
