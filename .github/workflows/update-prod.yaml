@@ -54,7 +54,7 @@ jobs:
     runs-on: ubuntu-24.04
     needs: docker-image
     steps:
-      - name: install sshpass
+      - name: connexion vps
         uses: kielabokkie/ssh-key-and-known-hosts-action@v1
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
@@ -62,7 +62,7 @@ jobs:
 
       - name: update docker image in VPS
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOSTNAME }} << EOF
+          ssh ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOSTNAME }} << EOF
           echo "Connexion reussie au VPS !!!"
           cd symfo-cicd/
           docker compose pull
