@@ -55,19 +55,10 @@ jobs:
     needs: docker-image
     steps:
       - name: connexion vps
-        uses: kielabokkie/ssh-key-and-known-hosts-action@v1
+        uses: ./github/actions/vps-script
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          ssh-host: ${{ secrets.VPS_HOSTNAME }}
-
-      - name: update docker image in VPS
-        run: |
-          ssh ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOSTNAME }} << EOF
-          echo "Connexion reussie au VPS !!!"
-          cd symfo-cicd/
-          docker compose pull
-          docker compose --env-file .env.prod up -d
-          docker image prune -f
-          echo "Mise à jour effectué avec succès le : `date`" >> log-update-app.txt
-          exit
-          EOF
+          vps-username: ${{ secrets.VPS_USERNAME }}
+          vps-host: ${{ secrets.VPS_HOSTNAME }}
+          vps-path: ${{ secrets.VPS_PATH }}
+          script: ./vps-script.sh

@@ -1,0 +1,32 @@
+name: execute script in vps
+description: execute script in vps
+author: starsky & hutch
+imputs:
+  ssh-private-key:
+    description: private key ssh
+    required: true
+  vps-username:
+    description: username for connexion in vps
+    required: true
+  vps-host:
+    description: host of vps or ip address
+    required: true
+  vps-path:
+    description: vps path directory used to push the script
+    required: false
+    default: ~/
+  script:
+    description: script used to be launch and execute
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: connexion vps
+      uses: kielabokkie/ssh-key-and-known-hosts-action@v1
+        with:
+          ssh-private-key: ${{ inputs.ssh-private-key }}
+          ssh-host: ${{ inputs.vps-host }}
+
+    - name: connexion vps
+      run: |
+      ssh ${{ inputs.vps-user }}@${{ inputs.vps-host }} "cd ${{ inputs.vps-path }} && bash -s < ${{ inputs.script }}"
