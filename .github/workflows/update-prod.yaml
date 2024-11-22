@@ -10,9 +10,6 @@ jobs:
     name: test
     runs-on: ubuntu-24.04
     steps:
-      - name: check php version
-        run: php -v
-
       - name: Checkout
         uses: actions/checkout@v4
         with:
@@ -24,14 +21,8 @@ jobs:
           php-version: '8.3'
           coverage: xdebug
 
-      - name: check php version
-        run: php -v
-
       - name: Install dependencies with composer
         run: composer update --no-ansi --no-interaction --no-progress
-        
-      - name: launch tests
-        run: php bin/phpunit
 
       - name: Run tests with phpunit/phpunit
         run: vendor/bin/phpunit --coverage-clover=coverage.xml
@@ -64,11 +55,14 @@ jobs:
     needs: docker-image
     steps:
       - name: install sshpass
-        run: sudo apt-get update && sudo apt-get install sshpass
+        uses: kielabokkie/ssh-key-and-known-hosts-action@v1
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-host: ${{ secrets.VPS_HOSTNAME }}
 
       - name: update docker image in VPS
         run: |
-          sshpass -p ${{ secrets.VPS_PASS }} ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOSTNAME }} << EOF
+          ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOSTNAME }} << EOF
           echo "Connexion reussie au VPS !!!"
           cd symfo-cicd/
           docker compose pull
