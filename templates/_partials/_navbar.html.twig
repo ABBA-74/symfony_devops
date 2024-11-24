@@ -1,36 +1,44 @@
 <nav class="navbar navbar-expand-lg fixed-top">
 	<div class="container-fluid">
-		<div class="brand">
-			<img src="{{ asset('images/logo.svg')}}" alt="logo" height="45" width="65">
-		</div>
-		<a class="navbar-brand me-0 me-lg-4" href={{ path('app_home') }}>Code2Prod</a>
+			<div class="brand d-inline-block d-lg-none">
+				<img src="{{ asset('images/logo.svg')}}" alt="logo code2prod" height="45" width="65">
+			</div>
+		<a class="navbar-brand me-0 me-lg-4 fw-bold d-flex align-items-center" href={{ path('app_home') }}>
+			<div class="brand d-none d-lg-inline-block">
+				<img src="{{ asset('images/logo.svg')}}" alt="logo code2prod" height="45" width="65">
+			</div>
+			Code2Prod
+			</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav me-auto mt-3 mt-lg-0">
 				<li class="nav-item">
-					<a class="nav-link active" aria-current="page" href={{ path('app_home') }}>Accueil</a>
+					<a class="nav-link {{ (route_name starts with 'app_home') ? 'active' : '' }}" aria-current="page" href={{ path('app_home') }}>Accueil</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Description du projet</a>
+					<a class="nav-link {{ (route_name starts with 'app_project') ? 'active' : '' }}" href={{ path('app_project') }}>Détails du projet</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link {{ (route_name starts with 'app_project') ? 'active' : '' }}" href={{ path('app_project') }}>Contact</a>
 				</li>
 			</ul>
 			<ul class="navbar-nav ms-auto mb-3 mb-lg-0">
-            {% if not is_granted('IS_AUTHENTICATED_FULLY') %} 
-				<li class="nav-item">
-					<a class="nav-link active" aria-current="page" href={{ path('app_register') }}>Inscription</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href={{ path('app_login') }}>Connexion</a>
-				</li>
-            {% endif %}
-            {% if is_granted('IS_AUTHENTICATED_FULLY') %} 
-				<li class="nav-item">
-					<a class="nav-link" href={{ path('app_logout') }}>Déconnexion</a>
-				</li>
-			</ul>
-            {% endif %}
+				{% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+					<li class="nav-item">
+						<a class="nav-link {{ (route_name starts with 'app_register') ? 'active' : '' }}" aria-current="page" href={{ path('app_register') }}>Inscription</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link {{ (route_name starts with 'app_login') ? 'active' : '' }}" href={{ path('app_login') }}>Connexion</a>
+					</li>
+				{% endif %}
+				{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+					<li class="nav-item">
+						<a class="nav-link" href={{ path('app_logout') }}>Déconnexion</a>
+					</li>
+				</ul>
+			{% endif %}
 		</div>
 	</div>
 </nav>
