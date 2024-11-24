@@ -1,0 +1,17 @@
+@use '../base';
+
+footer {
+  margin-top: auto;
+  background-color: base.$primary;
+  min-height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    text-align: center;
+    font-size: 0.7rem;
+    line-height: 1.4;
+    color: base.$light;
+    //   padding-block: 1rem;
+  }
+}
