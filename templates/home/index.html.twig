@@ -1,14 +1,78 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!
+{% block title %}{{ parent() }} | Projet CI/CD
 {% endblock %}
 
 {% block body %}
-	<h1>Hello World!!! ✅</h1>
-	<ul>
-		<li><a href={{ path('app_login') }}>Login</a></li>
-		<li><a href={{ path('app_logout') }}>Logout</a></li>
-		<li><a href={{ path('app_register') }}>Register</a></li>
-	</ul>
-	<button class="btn btn-secondary">toto</button>
+	{% include "/home/_header.html.twig" %}
+	<div class="container container-homepage">
+		<section class="section section-1 section-ltr pb-5">
+			<h2 class="mb-5 text-center">Pourquoi ce projet ?</h2>
+			<div class="wrapper d-flex flex-column flex-lg-row align-items-center">
+				<div class="wrapper-content px-0 px-md-2 px-xl-5">
+					<p class="mb-2">Marre des déploiements qui prennent des plombes ? Les galères de déploiement, c'est fini !</p>
+					<p class="mb-2">On sait tous que les déploiements manuels, c'est :</p>
+					<ul class="list-group mb-2">
+						<li class="list-group-item bg-light-orange">🕑 Long : Les déploiements manuels prennent beaucoup de temps et ralentissent votre productivité.</li>
+						<li class="list-group-item bg-light-orange">⚠️ Risqué : Une simple erreur humaine peut entraîner des problèmes en production.</li>
+						<li class="list-group-item bg-light-orange">🤯 Stressant : Gérer les déploiements sous pression peut être source d'anxiété et d'erreurs.</li>
+					</ul>
+					<p>Ce pipeline CI/CD, c'est le remède : rapide, sécurisé, et surtout… automatisé.</p>
+				</div>
+				<div class="wrapper-illustration px-0 px-md-2 px-xl-5 mt-5 mt-lg-0">
+					<img src="{{ asset('images/hp-s1.png') }}" alt="">
+				</div>
+			</div>
+		</section>
+		<section class="section section-2 section-rtl py-5">
+			<h2 class="mb-5 text-center">Les super-pouvoirs de ce pipeline</h2>
+			<div class="wrapper d-flex flex-column flex-lg-row align-items-center">
+				<div class="wrapper-illustration px-0 px-md-2 px-xl-5 mb-5 mb-lg-0">
+					<img src="{{ asset('images/hp-s2.png') }}" alt="">
+				</div>
+				<div class="wrapper-content px-0 px-md-2 px-xl-5">
+					<p class="mb-2">Pourquoi coder quand on peut automatiser ? Un Pipeline qui bosse pendant que vous prenez un café ☕</p>
+					<ul class="list-group mb-2">
+						<li class="list-group-item">🚀 Push ton code, c’est tout : il gère le reste.</li>
+						<li class="list-group-item">🔒 Analyse comme un pro : SonarQube scanne tout, même tes pires secrets.</li>
+						<li class="list-group-item">⚡ Déploie sans douleur : Docker Compose et un VPS bien dressé s’occupent de tout.</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section class="section section-3 section-ltr py-5">
+			<h2 class="mb-5 text-center">Comment ça marche ?</h2>
+			<div class="wrapper d-flex flex-column flex-lg-row align-items-center">
+				<div class="wrapper-content px-0 px-md-2 px-xl-5">
+					<p class="mb-2">Un workflow aussi fluide qu'un Mojito 🍹</p>
+					<ul class="list-group">
+						<li class="list-group-item bg-light-orange">Tu pushes ton code (et tu respires).</li>
+						<li class="list-group-item bg-light-orange">Le pipeline teste, valide, et construit.</li>
+						<li class="list-group-item bg-light-orange">Ça part direct en prod. Pas de stress, que du fun.</li>
+					</ul>
+				</div>
+				<div class="wrapper-illustration px-0 px-md-2 px-xl-5 mt-5 mt-lg-0">
+					<img src="{{ asset('images/hp-s3.png') }}" alt="">
+				</div>
+			</div>
+		</section>
+		<section class="section section-4 section-rtl py-5 mb-0">
+			<h2 class="mb-5 text-center">Les outils qui font le show</h2>
+			<div class="wrapper d-flex flex-column flex-lg-row align-items-center">
+				<div class="wrapper-illustration px-0 px-md-2 px-xl-5 mb-5 mb-lg-0">
+					<img src="{{ asset('images/hp-s4.png') }}" alt="">
+				</div>
+				<div class="wrapper-content px-0 px-md-2 px-xl-5">
+					<p class="mb-2">Sous le capot : de la technologie qui envoie du lourd...</p>
+					<p class="mb-2">La Dream Team du CI/CD :</p>
+					<ul class="list-group">
+						<li class="list-group-item">Symfony 7.1 : Le cerveau du projet.</li>
+						<li class="list-group-item">SonarQube : Le flic de la qualité.</li>
+						<li class="list-group-item">Docker & Docker Hub : Les conteneurs de rêve.</li>
+						<li class="list-group-item">GitHub Actions : Le maestro de l'automatisation.</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</div>
 {% endblock %}

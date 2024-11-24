@@ -4,6 +4,8 @@
 *,
 *::before,
 *::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -53,6 +55,7 @@ body {
   overflow-x: hidden;
   -webkit-user-select: none;
   user-select: none;
+  background-color: white;
 }
 
 /* Set shorter line heights on headings and interactive elements */
