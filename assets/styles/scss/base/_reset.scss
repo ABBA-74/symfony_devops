@@ -47,12 +47,12 @@ body {
   padding: 0;
   width: 100%;
   min-height: 100vh;
+  overflow-x: hidden;
   font-family: u.$font-poppins;
   font-weight: 500;
   line-height: 1.5rem;
   color: $dark;
   text-rendering: optimizeSpeed;
-  overflow-x: hidden;
   -webkit-user-select: none;
   user-select: none;
   background-color: white;
@@ -68,7 +68,9 @@ input,
 label {
   line-height: 1.1;
 }
-
+.subtitle{
+  line-height: 1.5rem;
+}
 /* Balance text wrapping on headings */
 h1,
 .h1,

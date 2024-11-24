@@ -7,11 +7,12 @@
 
 {% block body %}
 	{% include "/project/_header.html.twig" %}
-	<div class="container container-project">
+	<div class="container container-project px-0">
 		<section class="section section-1 section-ltr">
-			<h2 class="mb-5 text-center">Pourquoi ce pipeline ?</h2>
-			<div class="wrapper d-flex flex-column flex-lg-row align-items-center">
-				<div class="wrapper-content px-0 px-md-2 px-xl-5">
+			<h2 class="mb-3 text-center">Pourquoi ce pipeline ?</h2>
+			<h3 class="subtitle h6 text-center fw-bold mb-5 px-3">Une solution pensée pour en finir avec les galères de déploiement</h3>
+			<div class="wrapper d-flex flex-column-reverse flex-lg-row align-items-center">
+				<div class="wrapper-content px-3 px-xl-5">
 					<p class="mb-2">Déployer du code, c'est souvent la partie la moins fun du développement. Entre les erreurs manuelles, les validations oubliées, et le stress du dernier moment… ça finit souvent en casse-tête.</p>
 					<p class="mb-2">Ce pipeline change la donne :</p>
 					<ul class="list-group mb-2">
@@ -20,29 +21,30 @@
 						<li class="list-group-item bg-light-orange">✨ Productivité boostée : Vous gagnez du temps et vos nuits blanches deviennent un lointain souvenir.</li>
 					</ul>
 				</div>
-				<div class="wrapper-illustration px-0 px-md-2 px-xl-5 mt-5 mt-lg-0">
+				<div class="wrapper-illustration px-3 px-xl-5 mb-5 mt-lg-0">
 					<img src="{{ asset('images/dp-s1.png') }}" alt="cicd illustration">
 				</div>
 			</div>
 		</section>
 		<section class="section section-2 section-rtl">
-			<h2 class="mb-5 text-center">Ce qui se passe en arrière-plan</h2>
+			<h2 class="mb-3 text-center">Ce qui se passe en arrière-plan</h2>
+			<h3 class="subtitle h6 text-center fw-bold mb-5 px-3">Un workflow solide qui fait tout le travail pour vous</h3>
 			<div class="wrapper d-flex flex-column flex-lg-row align-items-center">
-				<div class="wrapper-illustration px-0 px-md-2 px-xl-5 mb-5 mb-lg-0">
+				<div class="wrapper-illustration px-3 px-xl-5 mb-5 mb-lg-0">
 					<img src="{{ asset('images/dp-s2.png') }}" alt="plan du process">
 				</div>
-				<div class="wrapper-content px-0 px-md-2 px-xl-5">
+				<div class="wrapper-content px-3 px-xl-5">
 					<p class="mb-2">Derrière sa simplicité d'utilisation, ce pipeline regorge de fonctionnalités robustes :</p>
-					<p>Intégration Continue (CI) :</p>
-					<ul class="list-group mb-2">
+					<p class="mb-2">Intégration Continue (CI) :</p>
+					<ul class="list-group mb-3">
 						<li class="list-group-item">Chaque commit est scanné par SonarQube, qui traque les bugs, les vulnérabilités, et les mauvaises pratiques.</li>
 						<li class="list-group-item">Les fichiers de configuration Symfony sont vérifiés pour éviter les erreurs de compatibilité.</li>
 					</ul>
-					<p>Livraison Continue (CD) :</p>
-					<ul class="list-group mb-2">
+					<p class="mb-2">Livraison Continue (CD) :</p>
+					<ul class="list-group mb-3">
 						<li class="list-group-item">Une image Docker est construite et envoyée sur Docker Hub, prête à être utilisée.</li>
 					</ul>
-					<p>Déploiement Automatique :</p>
+					<p class="mb-2">Déploiement Automatique :</p>
 					<ul class="list-group mb-2">
 						<li class="list-group-item">Le serveur récupère automatiquement l'image Docker, la déploie avec Docker Compose, et nettoie les anciennes versions pour optimiser les ressources.</li>
 					</ul>
@@ -50,9 +52,10 @@
 			</div>
 		</section>
 		<section class="section section-3 section-ltr">
-			<h2 class="mb-5 text-center">Du code à la prod, comme un jeu d'enfant</h2>
-			<div class="wrapper d-flex flex-column flex-lg-row align-items-center mb-0 mb-lg-5">
-				<div class="wrapper-content px-0 px-md-2 px-xl-5">
+			<h2 class="mb-3 text-center">Du code à la prod, comme un jeu d'enfant</h2>
+			<h3 class="subtitle h6 text-center fw-bold mb-5 px-3">Chaque étape optimisée pour un déploiement sans effort</h3>
+			<div class="wrapper d-flex flex-column-reverse flex-lg-row align-items-center mb-0 mb-lg-5">
+				<div class="wrapper-content px-3 px-xl-5">
 					<p class="mb-2">Voici un aperçu des étapes que suit le pipeline :</p>
 					<ul class="list-group mb-2">
 						<li class="list-group-item bg-light-orange">Push du Code : Vous poussez votre code dans le dépôt Git.</li>
@@ -62,7 +65,7 @@
 					</ul>
 					<p class="text-pretty">Chaque étape est optimisée pour minimiser les erreurs et garantir un déploiement rapide. Ci-dessous un aperçu du workflow de github :</p>
 				</div>
-				<div class="wrapper-illustration px-0 px-md-2 px-xl-5 mt-5 mt-lg-0">
+				<div class="wrapper-illustration px-3 px-xl-5 mb-5 mt-lg-0">
 					<img src="{{ asset('images/dp-s3.png') }}" alt="codeur illustration">
 				</div>
 			</div>
@@ -82,9 +85,10 @@
 			</div>
 		</section>
 		<section class="section section-4 section-rtl">
-			<h2 class="mb-5 text-center">Une Boîte à Outils Puissante et Moderne</h2>
-			<div class="wrapper d-flex flex-column flex-lg-row align-items-center">
-				<div class="wrapper-content px-0 px-md-2 px-xl-5">
+			<h2 class="mb-3 text-center">Une Boîte à Outils Puissante et Moderne</h2>
+			<h3 class="subtitle h6 text-center fw-bold mb-5 px-3">Des technologies fiables pour des résultats impeccables</h3>
+			<div class="wrapper d-flex flex-column-reverse flex-lg-row align-items-center">
+				<div class="wrapper-content px-3 px-xl-5">
 					<p class="mb-2">Ce pipeline s'appuie sur des technologies fiables et largement reconnues :</p>
 					<ul class="list-group mb-2">
 						<li class="list-group-item">SonarQube : Analyseur de code pour garantir des standards de qualité élevés.</li>
@@ -94,18 +98,19 @@
 					</ul>
 					<p>Ces outils sont là pour assurer une expérience utilisateur sans accroc, même sur des projets complexes.</p>
 				</div>
-				<div class="wrapper-illustration px-0 px-md-2 px-xl-5 mb-5 mb-lg-0">
+				<div class="wrapper-illustration px-3 px-xl-5 mb-5 mb-lg-0">
 					<img src="{{ asset('images/dp-s4.svg') }}" alt="logos docker sonarqube github">
 				</div>
 			</div>
 		</section>
 		<section class="section section-5 section-rtl">
-			<h2 class="mb-5 text-center">Un projet conçu pour illustrer mon expertise</h2>
+			<h2 class="mb-3 text-center">Un projet conçu pour illustrer mon expertise</h2>
+			<h3 class="subtitle h6 text-center fw-bold mb-5 px-3">Un exemple concret de savoir-faire en action</h3>
 			<div class="wrapper d-flex flex-column flex-lg-row align-items-center">
-				<div class="wrapper-illustration px-0 px-md-2 px-xl-5 mb-5 mb-lg-0">
+				<div class="wrapper-illustration px-3 px-xl-5 mb-5 mb-lg-0">
 					<img src="{{ asset('images/dp-s5.png') }}" alt="zoom sur pc illustration">
 				</div>
-				<div class="wrapper-content px-0 px-md-2 px-xl-5">
+				<div class="wrapper-content px-3 px-xl-5">
 					<p class="mb-2">Ce pipeline n'a pas pour vocation d'être utilisé ou partagé comme une solution prête à l'emploi. Son véritable objectif ? Montrer comment je résous les défis techniques et illustrer ma maîtrise des outils modernes.</p>
 					<p class="mb-2">Voici ce que ce projet démontre :</p>
 					<ul class="list-group mb-2">

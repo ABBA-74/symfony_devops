@@ -1,3 +1,5 @@
+@use '../utils' as *;
+
 .container {
   section {
     padding-block: 6rem;
@@ -12,10 +14,13 @@
       background-color: rgb(252, 244, 236);
     }
     & > div:not(.wrapper-illustration-xl) img {
-      height: 20rem;
+      height: 100%;
       margin: auto;
       object-fit: contain;
       border-radius: 0.75rem;
+      @include md {
+        height: 20rem;
+      }
     }
     &.section-ltr,
     &.section-rtl {
@@ -27,7 +32,7 @@
     &.section-rtl::before {
       position: absolute;
       top: 0;
-      width: 120vw;
+      width: 100vw;
       left: 50%;
       transform: translateX(-50%);
       z-index: -1;
