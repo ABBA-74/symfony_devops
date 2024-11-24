@@ -1,0 +1,38 @@
+.container {
+  section {
+    padding-block: 6rem;
+  }
+  .section {
+    &:nth-child(even)::before {
+      content: '';
+      position: fixed;
+      left: 0;
+      right: 0;
+      height: 100%;
+      background-color: rgb(252, 244, 236);
+    }
+    & > div:not(.wrapper-illustration-xl) img {
+      height: 20rem;
+      margin: auto;
+      object-fit: contain;
+      border-radius: 0.75rem;
+    }
+    &.section-ltr,
+    &.section-rtl {
+      position: relative;
+      .wrapper > * {
+        flex: 1;
+      }
+    }
+    &.section-rtl::before {
+      position: absolute;
+      top: 0;
+      width: 120vw;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
+      background-color: #ff996221;
+      overflow: hidden;
+    }
+  }
+}
