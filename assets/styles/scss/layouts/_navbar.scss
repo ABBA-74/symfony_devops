@@ -1,0 +1,14 @@
+@use '../base' as b;
+@use '../utils' as u;
+
+nav.navbar {
+  width: 100vw;
+  transition: 0s background-color ease-in-out, 0s color ease-in-out;
+  font-size: 1rem;
+  background-color: b.$light;
+  box-shadow: u.$shadow-sm;
+  color: inherit;
+  &:first-child() {
+    max-width: 1500px;
+  }
+}
