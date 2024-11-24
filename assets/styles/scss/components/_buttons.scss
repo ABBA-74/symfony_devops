@@ -1,0 +1,48 @@
+@use '../base/' as b;
+@use '../utils/' as u;
+
+.btn {
+  border: none;
+  box-shadow: u.$shadow-sm;
+  transition: all 0.3s ease-in-out;
+  height: 2.35rem;
+}
+.btn-primary {
+  background-color: b.$primary;
+}
+.btn-secondary {
+  background-color: b.$grey;
+}
+.btn-success {
+  background-color: b.$success;
+}
+.btn-warning {
+  background-color: b.$warning;
+}
+.btn-danger {
+  background-color: b.$danger;
+}
+
+.btn[disabled],
+.btn:focus-visible,
+.btn-check:checked + .btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check) + .btn:active,
+.btn-primary:hover {
+  background-color: b.$secondary;
+  box-shadow: none;
+}
+
+.btn-dark:hover {
+  &.btn[disabled],
+  &.btn:focus-visible,
+  &.btn-check:checked + .btn,
+  &.btn.active,
+  &.btn.show,
+  &.btn:first-child:active,
+  &:not(.btn-check) + .btn:active {
+    background-color: b.$dark;
+  }
+}
