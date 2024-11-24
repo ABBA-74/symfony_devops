@@ -1,0 +1,48 @@
+@use '../utils/' as *;
+.container-project {
+  .section-2 {
+    .wrapper-illustration img{
+      border-radius: 0.5rem;
+      background-color: #d1c7c2;
+    }
+  }
+  .section-3 {
+    .wrapper-illustration-xl {
+      height: 41rem;
+      .wrapper-img {
+        background-color: #0d111616;
+        border: 1px solid lightgray;
+        box-shadow: $shadow-lg;
+        border-radius: 0.5rem;
+        &.active {
+          transform: translateY(5rem);
+          animation: slideUp 0.65s forwards ease-in-out;
+          opacity: 0.5;
+        }
+        &:not(.active) {
+          display: none;
+        }
+        @keyframes slideUp {
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+      }
+      img {
+        // max-height: 645px;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: inline-block;
+        border-radius: 0.35rem;
+      }
+    }
+  }
+  .section-4 {
+    img {
+      width: 250px;
+    }
+  }
+}
