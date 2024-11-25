@@ -11,4 +11,16 @@ nav.navbar {
   &:first-child() {
     max-width: 1500px;
   }
+  .nav-item{
+    &:hover .nav-link:not(.active){
+      color: rgb(14, 14, 14);
+    }
+    .nav-link {
+      transition: color 0.35s ease-in-out;
+      color: rgba(74, 74, 74, 0.735);
+      &.active{
+        color: #ff7b33;
+      }
+    }
+  }
 }

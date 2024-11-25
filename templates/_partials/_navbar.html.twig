@@ -21,10 +21,10 @@
 					<a class="nav-link {{ (route_name starts with 'app_project') ? 'active' : '' }}" href={{ path('app_project') }}>Détails du projet</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link {{ (route_name starts with 'app_project') ? 'active' : '' }}" href={{ path('app_project') }}>Contact</a>
+					<a class="nav-link" href=#>Contact</a>
 				</li>
 			</ul>
-			<ul class="navbar-nav ms-auto mb-3 mb-lg-0">
+			<ul class="navbar-nav ms-auto mb-3 mb-lg-0 me-0 me-lg-4">
 				{% if not is_granted('IS_AUTHENTICATED_FULLY') %}
 					<li class="nav-item">
 						<a class="nav-link {{ (route_name starts with 'app_register') ? 'active' : '' }}" aria-current="page" href={{ path('app_register') }}>Inscription</a>
