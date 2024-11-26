@@ -7,4 +7,4 @@ setInterval(() => {
     i++;
     i = i >= sliders.length ? 0 : i;
     console.log(i)
-}, 3000);
+}, 5200);
