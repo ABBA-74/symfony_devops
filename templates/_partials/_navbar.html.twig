@@ -1,40 +1,42 @@
 <nav class="navbar navbar-expand-lg fixed-top">
 	<div class="container-fluid">
-			<div class="brand d-inline-block d-lg-none">
-				<img src="{{ asset('images/logo.svg')}}" alt="logo code2prod" height="45" width="65">
-			</div>
-		<a class="navbar-brand me-0 me-lg-4 fw-bold d-flex align-items-center" href={{ path('app_home') }}>
+		<div class="brand d-inline-block d-lg-none">
+			<img src="{{ asset('images/logo.svg')}}" alt="logo code2prod" height="45" width="65">
+		</div>
+		<a class="navbar-brand me-0 me-lg-5 fw-bold d-flex align-items-center" href={{ path('app_home') }}>
 			<div class="brand d-none d-lg-inline-block">
 				<img src="{{ asset('images/logo.svg')}}" alt="logo code2prod" height="45" width="65">
 			</div>
 			Code2Prod
-			</a>
+		</a>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav me-auto mt-3 mt-lg-0">
-				<li class="nav-item">
-					<a class="nav-link {{ (route_name starts with 'app_home') ? 'active' : '' }}" aria-current="page" href={{ path('app_home') }}>Accueil</a>
+				<li class="nav-item {{ (route_name starts with 'app_home') ? 'active' : '' }} d-flex justify-content-lg-center align-items-center me-0 me-lg-4 ms-2 ms-lg-0">
+					<img src="{{ asset('images/icons/home.svg') }}" alt="icone d'accueil" height="16" width="auto" class="me-1">
+					<a class="nav-link" aria-current="page" href={{ path('app_home') }}>Accueil</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link {{ (route_name starts with 'app_project') ? 'active' : '' }}" href={{ path('app_project') }}>Détails du projet</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href=#>Contact</a>
+				<li class="nav-item {{ (route_name starts with 'app_project') ? 'active' : '' }} d-flex justify-content-lg-center align-items-center me-0 me-lg-4 ms-2 ms-lg-0">
+					<img src="{{ asset('images/icons/project.svg') }}" alt="icone de projet" height="16" width="auto" class="me-1">
+					<a class="nav-link" href={{ path('app_project') }}>Détails du projet</a>
 				</li>
 			</ul>
 			<ul class="navbar-nav ms-auto mb-3 mb-lg-0 me-0 me-lg-4">
 				{% if not is_granted('IS_AUTHENTICATED_FULLY') %}
-					<li class="nav-item">
-						<a class="nav-link {{ (route_name starts with 'app_register') ? 'active' : '' }}" aria-current="page" href={{ path('app_register') }}>Inscription</a>
+					<li class="nav-item {{ (route_name starts with 'app_register') ? 'active' : '' }} d-flex justify-content-lg-center align-items-center me-0 me-lg-4 ms-2 ms-lg-0">
+						<img src="{{ asset('images/icons/register.svg') }}" alt="icone d'inscription" height="16" width="auto" class="me-1">
+						<a class="nav-link" aria-current="page" href={{ path('app_register') }}>Inscription</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link {{ (route_name starts with 'app_login') ? 'active' : '' }}" href={{ path('app_login') }}>Connexion</a>
+					<li class="nav-item {{ (route_name starts with 'app_login') ? 'active' : '' }} d-flex justify-content-lg-center align-items-center me-0 me-lg-4 ms-2 ms-lg-0">
+						<img src="{{ asset('images/icons/login.svg') }}" alt="icone de connexion" height="16" width="auto" class="me-1">
+						<a class="nav-link" href={{ path('app_login') }}>Connexion</a>
 					</li>
 				{% endif %}
 				{% if is_granted('IS_AUTHENTICATED_FULLY') %}
-					<li class="nav-item">
+					<li class="nav-item" class="d-flex justify-content-lg-center align-items-center me-0 me-lg-4">
+						<img src="{{ asset('images/icons/logout.svg') }}" alt="icone de déconnection" height="16" width="auto" class="me-1">
 						<a class="nav-link" href={{ path('app_logout') }}>Déconnexion</a>
 					</li>
 				</ul>

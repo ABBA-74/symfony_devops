@@ -11,16 +11,34 @@ nav.navbar {
   &:first-child() {
     max-width: 1500px;
   }
-  .nav-item{
-    &:hover .nav-link:not(.active){
-      color: rgb(14, 14, 14);
+  .nav-item {
+    img,
+    svg {
+      fill: currentColor;
+      transition: fill 0.35s ease-in-out;
     }
-    .nav-link {
+    &:not(.active) a {
       transition: color 0.35s ease-in-out;
-      color: rgba(74, 74, 74, 0.735);
-      &.active{
-        color: #ff7b33;
-      }
+      color: #4a4a4a;
+    }
+    &:not(.active) img {
+      transition: filter 0.35s ease-in-out;
+      filter: invert(30%) sepia(1%) saturate(2025%) hue-rotate(354deg)
+        brightness(90%) contrast(90%);
+    }
+    &:hover:not(.active) a {
+      color: #0e0e0e;
+    }
+    &:hover:not(.active) img {
+      filter: invert(0%) sepia(46%) saturate(7092%) hue-rotate(33deg)
+        brightness(95%) contrast(89%);
+    }
+    &.active a {
+      color: #ff7b33;
+    }
+    &.active img {
+      filter: invert(71%) sepia(35%) saturate(7281%) hue-rotate(337deg)
+        brightness(104%) contrast(103%);
     }
   }
 }
