@@ -23,12 +23,26 @@
   }
   .section-3 {
     .wrapper-illustration-xl {
-      height: 41rem;
+      height: 45rem;
       .wrapper-img {
         background-color: #0d111616;
         border: 1px solid lightgray;
         box-shadow: $shadow-lg;
         border-radius: 0.5rem;
+        .illustration-subtitle{
+          position: relative;
+          opacity: 0;
+          transform: translateY(1.5rem);
+        }
+        .illustration-subtitle.active{
+          animation: slideUpSubtitle 0.3s 0.35s forwards ease-out;
+        }
+        @keyframes slideUpSubtitle {
+          to{
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
         &.active {
           transform: translateY(5rem);
           animation: slideUp 0.65s forwards ease-in-out;

@@ -16,13 +16,19 @@
 					<p class="mb-2">Déployer du code, c'est souvent la partie la moins fun du développement. Entre les erreurs manuelles, les validations oubliées, et le stress du dernier moment… ça finit souvent en casse-tête.</p>
 					<p class="mb-2">Ce pipeline change la donne :</p>
 					<ul class="list-group mb-2">
-						<li class="list-group-item bg-light-orange">🚀 <strong>Automatisation totale</strong> : Il fait le boulot pendant que vous codez (ou prenez un café).</li>
-						<li class="list-group-item bg-light-orange">🔒 <strong>Fiabilité</strong> : Plus de bugs qui apparaissent après coup, tout est validé en amont.</li>
-						<li class="list-group-item bg-light-orange">✨ <strong>Productivité boostée</strong> : Vous gagnez du temps et vos nuits blanches deviennent un lointain souvenir.</li>
+						<li class="list-group-item bg-light-orange">🚀
+							<strong>Automatisation totale</strong>
+							: Il fait le boulot pendant que vous codez (ou prenez un café).</li>
+						<li class="list-group-item bg-light-orange">🔒
+							<strong>Fiabilité</strong>
+							: Plus de bugs qui apparaissent après coup, tout est validé en amont.</li>
+						<li class="list-group-item bg-light-orange">✨
+							<strong>Productivité boostée</strong>
+							: Vous gagnez du temps et vos nuits blanches deviennent un lointain souvenir.</li>
 					</ul>
 				</div>
 				<div class="wrapper-illustration px-3 px-xl-5 mb-5 mt-lg-0">
-					<img src="{{ asset('images/dp-s0.png') }}" alt="cicd illustration">
+					<img src="{{ asset('images/dp-s0.png') }}" alt="illustration cicd">
 				</div>
 			</div>
 		</section>
@@ -33,16 +39,22 @@
 			<div class="wrapper d-flex flex-column-reverse flex-lg-row align-items-center mb-5">
 				<div class="wrapper-content px-3 px-xl-5">
 					<p class="mb-2">Derrière sa simplicité d'utilisation, ce pipeline regorge de fonctionnalités robustes :</p>
-					<p class="mb-2"><strong>Intégration Continue (CI)</strong> :</p>
+					<p class="mb-2">
+						<strong>Intégration Continue (CI)</strong>
+						:</p>
 					<ul class="list-group mb-3">
 						<li class="list-group-item">Chaque commit est scanné par SonarQube, qui traque les bugs, les vulnérabilités, et les mauvaises pratiques.</li>
 						<li class="list-group-item">Les fichiers de configuration Symfony sont vérifiés pour éviter les erreurs de compatibilité.</li>
 					</ul>
-					<p class="mb-2"><strong>Livraison Continue (CD)</strong> :</p>
+					<p class="mb-2">
+						<strong>Livraison Continue (CD)</strong>
+						:</p>
 					<ul class="list-group mb-3">
 						<li class="list-group-item">Une image Docker est construite et envoyée sur Docker Hub, prête à être utilisée.</li>
 					</ul>
-					<p class="mb-2"><strong>Déploiement Automatique</strong> :</p>
+					<p class="mb-2">
+						<strong>Déploiement Automatique</strong>
+						:</p>
 					<ul class="list-group mb-2">
 						<li class="list-group-item">Le serveur récupère automatiquement l'image Docker, la déploie avec Docker Compose, et nettoie les anciennes versions pour optimiser les ressources.</li>
 					</ul>
@@ -92,14 +104,22 @@
 		<section class="section section-3 section-ltr">
 			<h2 class="mb-3 text-center">Du code à la prod, comme un jeu d'enfant</h2>
 			<h3 class="subtitle h6 text-center fw-bold mb-5 px-3">Chaque étape optimisée pour un déploiement sans effort</h3>
-			<div class="wrapper d-flex flex-column-reverse flex-lg-row align-items-center mb-0 mb-lg-5">
+			<div class="wrapper d-flex flex-column-reverse flex-lg-row align-items-center mb-0 mb-lg-4">
 				<div class="wrapper-content px-3 px-xl-5">
 					<p class="mb-2">Voici un aperçu des étapes que suit le pipeline :</p>
 					<ul class="list-group mb-2">
-						<li class="list-group-item bg-light-orange"><strong>Push du Code</strong> : Vous poussez votre code dans le dépôt Git.</li>
-						<li class="list-group-item bg-light-orange"><strong>Analyse et Validation</strong> : Le pipeline exécute des tests, scanne le code, et s'assure que tout est en ordre.</li>
-						<li class="list-group-item bg-light-orange"><strong>Build Docker</strong> : Une image propre est générée avec toutes les dépendances nécessaires.</li>
-						<li class="list-group-item bg-light-orange"><strong>Déploiement</strong> : Le serveur met tout en production automatiquement, sans intervention.</li>
+						<li class="list-group-item bg-light-orange">
+							<strong>Push du Code</strong>
+							: Vous poussez votre code dans le dépôt Git.</li>
+						<li class="list-group-item bg-light-orange">
+							<strong>Analyse et Validation</strong>
+							: Le pipeline exécute des tests, scanne le code, et s'assure que tout est en ordre.</li>
+						<li class="list-group-item bg-light-orange">
+							<strong>Build Docker</strong>
+							: Une image propre est générée avec toutes les dépendances nécessaires.</li>
+						<li class="list-group-item bg-light-orange">
+							<strong>Déploiement</strong>
+							: Le serveur met tout en production automatiquement, sans intervention.</li>
 					</ul>
 					<p class="text-pretty">Chaque étape est optimisée pour minimiser les erreurs et garantir un déploiement rapide. Ci-dessous un aperçu du workflow de github :</p>
 				</div>
@@ -107,33 +127,59 @@
 					<img src="{{ asset('images/dp-s3.png') }}" alt="codeur illustration">
 				</div>
 			</div>
+			<div class="btns-wrapper d-none d-lg-flex justify-content-center mb-3">
+				<button class="btn btn-primary me-1" id="prevSlideBtn">
+					<img src="{{ asset('images/icons/chevron_left.svg') }}" alt="icone de chevron gauche">
+				</button>
+				<button class="btn btn-primary ms-1" id="nextSlideBtn">
+					<img src="{{ asset('images/icons/chevron_right.svg') }}" alt="icone de chevron droite">
+				</button>
+			</div>
 			<div class="wrapper-illustration-xl d-none d-lg-block px-0 px-md-2 px-xl-5 mb-5 mb-lg-0">
-				<div class="wrapper-img active p-2">
+				<div class="wrapper-img active p-3">
+					<p class="illustration-subtitle active mt-1 mb-2">Vue d'ensemble des étapes réalisées dans le workflow de Github Actions</p>
 					<img src="{{ asset('images/dp-s201.png') }}" width="1200" height="645" alt="capture ecran github actions">
 				</div>
-				<div class="wrapper-img p-2">
+				<div class="wrapper-img p-3">
+					<p class="illustration-subtitle mt-1 mb-2">
+						<strong>Etape 1 : Phase de tests</strong>
+						- Exécution des tests automatisés et analyse de la qualité du code avec SonarQube</p>
 					<img src="{{ asset('images/dp-s202.png') }}" width="1200" height="645" alt="capture ecran github actions">
 				</div>
-				<div class="wrapper-img p-2">
+				<div class="wrapper-img p-3">
+					<p class="illustration-subtitle mt-1 mb-2">
+						<strong>Etape 2 : Phase Docker</strong>
+						- Création de l'image Docker et envoie vers Docker Hub</p>
 					<img src="{{ asset('images/dp-s203.png') }}" width="1200" height="645" alt="capture ecran github actions">
 				</div>
-				<div class="wrapper-img p-2">
+				<div class="wrapper-img p-3">
+					<p class="illustration-subtitle mt-1 mb-2">
+						<strong>Etape 3 : Phase VPS</strong>
+						- Connexion au VPS et configuration du réseau docker</p>
 					<img src="{{ asset('images/dp-s204.png') }}" width="1200" height="645" alt="capture ecran github actions">
 				</div>
 			</div>
 		</section>
 		<section class="section section-4 section-rtl">
 			{% include '/_partials/_wave.html.twig' with { type:'1', color: '#FFF2EB', position: 'top' } %}
-			<h2 class="mb-3 text-center">Une Boîte à Outils Puissante et Moderne</h2>
+			<h2 class="mb-3 text-center">Une boîte à outils puissante et moderne</h2>
 			<h3 class="subtitle h6 text-center fw-bold mb-5 px-3">Des technologies fiables pour des résultats impeccables</h3>
 			<div class="wrapper d-flex flex-column-reverse flex-lg-row align-items-center">
 				<div class="wrapper-content px-3 px-xl-5">
 					<p class="mb-2">Ce pipeline s'appuie sur des technologies fiables et largement reconnues :</p>
 					<ul class="list-group mb-2">
-						<li class="list-group-item"><strong>SonarQube</strong> : Analyseur de code pour garantir des standards de qualité élevés.</li>
-						<li class="list-group-item"><strong>Docker & Docker Compose</strong> : Conteneurisation pour des déploiements reproductibles et stables.</li>
-						<li class="list-group-item"><strong>Docker Hub</strong> : Stockage des images, accessible depuis n'importe où.</li>
-						<li class="list-group-item"><strong>GitHub Actions</strong> : Automatisation des workflows, pour que tout s'exécute dans l'ordre et sans intervention manuelle.</li>
+						<li class="list-group-item">
+							<strong>SonarQube</strong>
+							: Analyseur de code pour garantir des standards de qualité élevés.</li>
+						<li class="list-group-item">
+							<strong>Docker & Docker Compose</strong>
+							: Conteneurisation pour des déploiements reproductibles et stables.</li>
+						<li class="list-group-item">
+							<strong>Docker Hub</strong>
+							: Stockage des images, accessible depuis n'importe où.</li>
+						<li class="list-group-item">
+							<strong>GitHub Actions</strong>
+							: Automatisation des workflows, pour que tout s'exécute dans l'ordre et sans intervention manuelle.</li>
 					</ul>
 					<p>Ces outils sont là pour assurer une expérience utilisateur sans accroc, même sur des projets complexes.</p>
 				</div>
@@ -154,9 +200,15 @@
 					<p class="mb-2">Ce pipeline n'a pas pour vocation d'être utilisé ou partagé comme une solution prête à l'emploi. Son véritable objectif ? Montrer comment je résous les défis techniques et illustrer ma maîtrise des outils modernes.</p>
 					<p class="mb-2">Voici ce que ce projet démontre :</p>
 					<ul class="list-group mb-2">
-						<li class="list-group-item bg-light-orange"><strong>Mon approche méthodique</strong> : Chaque étape du pipeline a été pensée pour répondre à des problématiques concrètes rencontrées dans des projets réels.</li>
-						<li class="list-group-item bg-light-orange"><strong>Mon expertise DevOps</strong> : De l'intégration continue à la livraison, j'ai conçu une solution qui automatise tout en respectant les bonnes pratiques.</li>
-						<li class="list-group-item bg-light-orange"><strong>Ma capacité à expliquer des concepts techniques</strong> : Ce projet est là pour rendre clair ce qui est souvent complexe, en le présentant de manière organisée et compréhensible.</li>
+						<li class="list-group-item bg-light-orange">
+							<strong>Mon approche méthodique</strong>
+							: Chaque étape du pipeline a été pensée pour répondre à des problématiques concrètes rencontrées dans des projets réels.</li>
+						<li class="list-group-item bg-light-orange">
+							<strong>Mon expertise DevOps</strong>
+							: De l'intégration continue à la livraison, j'ai conçu une solution qui automatise tout en respectant les bonnes pratiques.</li>
+						<li class="list-group-item bg-light-orange">
+							<strong>Ma capacité à expliquer des concepts techniques</strong>
+							: Ce projet est là pour rendre clair ce qui est souvent complexe, en le présentant de manière organisée et compréhensible.</li>
 					</ul>
 					<p>En résumé : Ce pipeline n'est pas un produit, mais une démonstration concrète de mes compétences et de ma capacité à concevoir des solutions robustes et pédagogiques.</p>
 				</div>
