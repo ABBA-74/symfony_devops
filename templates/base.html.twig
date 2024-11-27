@@ -12,7 +12,7 @@
 		{% block stylesheets %}
 			<link rel="stylesheet" href="{{ asset('styles/app.scss') }}">
 		{% endblock %}
-
+		<script src="{{ asset('js/handle-scroll-to-top.js')}}" defer></script>
 		{% block javascripts %}
 			{% block importmap %}
 				{{ importmap('app') }}
@@ -20,9 +20,10 @@
 		{% endblock %}
 	</head>
 	<body>
-        {% set route_name = app.request.attributes.get('_route') %}
+		{% set route_name = app.request.attributes.get('_route') %}
 		{% include "_partials/_navbar.html.twig" %}
 		{% block body %}{% endblock %}
+		<button class="btn btn-primary" id="scrollToTopBtn"><img src="{{ asset('images/icons/chevron_up.svg')}}" alt="icone de chevron haut" ></button>
 		{% include "_partials/_footer.html.twig" %}
 	</body>
 </html>
