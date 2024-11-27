@@ -6,7 +6,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 3.5rem);
+  min-height: calc(100vh - 3.5rem);
+  padding-top: 6.5rem;
+  padding-bottom: 3rem;
   width: 100%;
   &::before {
     content: '';
@@ -24,7 +26,10 @@
     flex-direction: column;
     box-shadow: u.$shadow-lg;
     width: clamp(350px, 25vw, 450px);
-    padding: 2rem;
+    padding: 1rem;
+    @include u.sm {
+      padding: 2rem;
+    }
     border: 1px solid lightblue;
     background-color: b.$light;
     border-radius: 0.75rem;

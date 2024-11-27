@@ -6,7 +6,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 3.5rem);
+  min-height: calc(100vh - 3.5rem);
+  padding-top: 6.5rem;
+  padding-bottom: 3rem;
   width: 100%;
   &::before {
     content: '';

@@ -2,7 +2,10 @@
 
 .container {
   section {
-    padding-block: 6rem;
+    padding-block: 5rem;
+    @include md {
+      padding-block: 7rem;
+    }
   }
   .section {
     &:nth-child(even)::before {

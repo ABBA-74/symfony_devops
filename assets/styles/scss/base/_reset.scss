@@ -50,7 +50,7 @@ body {
   overflow-x: hidden;
   font-family: u.$font-poppins;
   font-weight: 500;
-  line-height: 1.5rem;
+  line-height: 1.7rem;
   color: $dark;
   text-rendering: optimizeSpeed;
   -webkit-user-select: none;
@@ -66,10 +66,10 @@ h4,
 button,
 input,
 label {
-  line-height: 1.1;
+  line-height: 1.5;
 }
 .subtitle{
-  line-height: 1.5rem;
+  line-height: 1.7rem;
 }
 /* Balance text wrapping on headings */
 h1,
@@ -87,6 +87,7 @@ h6,
   font-family: u.$font-poppins;
   font-weight: 800;
   text-wrap: balance;
+  padding-inline: 1rem;
 }
 
 /* A elements that don't have a class get default styles */
@@ -123,10 +124,13 @@ select {
 .form-select:focus,
 input:focus,
 textarea:focus,
-select:focus,
-button:focus {
+select:focus {
   outline: none;
   box-shadow: none;
+  border-color: $light-blue;
+}
+button:focus {
+  outline: none;
   border-color: $light-blue;
 }
 /* Make sure textareas without a rows attribute are not tiny */
